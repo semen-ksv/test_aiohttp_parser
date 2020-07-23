@@ -1,36 +1,19 @@
-## Test task: Scraping citrus.ua and API with Django Rest Framework
-Main web-scraping file scraper.py.
+## Test task: Scraping using aiohttp
+Main web-scraping file parser.py.
 
-Information saves in database PostgraseSQL using peeve and Django ORM.
+Information saves in database MongoDB using motor and pymongo.
 
 #### Implement:
-  1. used Django Rest Framework
-  2. models: ProductItem
-  3. scraping with HTMLSession, BeautifulSoup
+  1. used aiohttp for request and as server Framework
+  2. for scraping information access to api web site
   4. use Celery and Redis for run scraping in the background
-  5. testing models, views, urls
-  6. filtering by 'type', 'price', 'cashbak' using ```django-filter```
   
   
 #### Urls:
-1. main page with one button  ```/```
-2. list of all scraping items ```items/```
-![](templates/api_page.jpg)
-3. list of iPhones ```items/phone``` or notebooks ```items/phone```
+1. main page with list of all results  ```/```
+![](app_scraping/resul.jpg)
+2. list of filtered results by firs letter ```/<letter>```
 
-```
-    {
-        "id": 1,
-        "name": "Apple iPhone 11 Pro Max 64Gb Midnight Green (MWHH2)",
-        "type": "iPhone",
-        "link": "https://www.citrus.ua//smartfony/iphone-11-pro-max-64gb-midnight-green-apple-653246.html",
-        "image_link": "https://i.citrus.ua/imgcache/size_180/uploads/shop/1/3/1354916085a1a1199f81e7cd5a69686e.jpg",
-        "price": 39999,
-        "cashback": 699,
-        "specifications": "Материалы корпуса: Металл, Стекло; Влагозащита: IP68; Влагозащита: IP68; К....",
-        "product_html": "<div class="product-card__name"><a class="" href="/smartfony/....>"
-    },
-```
 
 ### Running project
 
@@ -62,27 +45,8 @@ Then install the project dependencies with
 pip install -r requirements.txt
 ```
 
-Migrate for creating all tables 
+Migrate setup MongoDB settings in ```config.yaml```
 
-```
-python manage.py migrate
-```
 
-Run Redis in one terminal 
-
-```
-redis-server
-```
-
-Run Celery in another terminal 
-
-```
-celery -A Test_scraping_django worker  -l info
-```
-
-Now you can run the project with this command in third terminal
-
-```
-python manage.py runserver
-```
+Run the project with starting file ```main.py```
 
