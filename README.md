@@ -45,7 +45,7 @@ Then install the project dependencies with
 pip install -r requirements.txt
 ```
 
-Migrate setup MongoDB settings in ```config.yaml```
+Setup MongoDB settings in ```config.yaml```
 
 
 Run the project with starting file ```entry.py```
