@@ -1,0 +1,4 @@
+site_name: 'Test parser aiohttp'
+
+db_name: 'test'
+mongo_uri: 'mongodb://127.0.0.1:27017'

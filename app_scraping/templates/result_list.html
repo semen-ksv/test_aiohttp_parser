@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>{{start}} from www.fonbet.ru </h1>
+    <table>
+      <tr style="text-align: center; font-size: 16px">
+        <td><b>Название матча</b></td>
+        <td><b> Результат </b></td>
+        <td><b> Время начала </b></td>
+        <td><b> Статус </b></td>
+      </tr>
+
+    {% for req in results %}
+         <tr>
+        <td>{{req['event']}}</td>
+        <td>{{req['finish_result']}}</td>
+        <td>{{req['start_time']}}</td>
+            {% if req['status'] == 3 %}
+            <td style="background:#24668c; color: aliceblue; font-size: 12px"> ЗАВЕРШЕН </td>
+            {% else %}
+            <td style="background:#5dad00; color: aliceblue; font-size: 12px"> LIVE </td>
+            {% endif %}
+          </tr>
+    {% endfor %}
+
+    </table>
+
+</body>
+</html>
