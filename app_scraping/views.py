@@ -1,4 +1,3 @@
-from aiohttp import web
 from aiohttp_jinja2 import template
 from pymongo import MongoClient
 from app_scraping.settings import load_config

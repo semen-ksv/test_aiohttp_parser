@@ -1,5 +1,4 @@
 import asyncio
-
 from aiohttp import web
 from app_scraping.parser import parser
 from app_scraping.routes import setup_routes

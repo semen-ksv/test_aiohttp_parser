@@ -1,6 +1,4 @@
 from pathlib import Path
-import sqlalchemy as sa
-import aiopg as aiopg
 import yaml
 
 def load_config(config_file=None) -> dict:
